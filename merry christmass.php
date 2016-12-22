@@ -1,14 +1,16 @@
 <?php
-$A='';$C='';$E='';$M=''; $O=''; $R=''; $S=''; $T=''; $Y='';
-        
-M(); E(); R(); Y(); C(); H(); I(); S(); T(); A(); O();
 
+//defining variables to a
+$A='';$C='';$E='';$M=''; $O=''; $R=''; $S=''; $T=''; $Y='';$screamer='';
+//calling functions        
+M(); E(); R(); Y(); C(); H(); I(); S(); T(); A(); O(); screamer();
+//creating arrays;
 $merry = [$M, $E, $R, $R, $Y];
 $christmas = [$C, $H, $R, $I, $S, $T, $M, $A, $S, $S];
 $ho = [$H, $O];
 
 
-
+//defining functions
 //A
 function A(){
 global $A;
@@ -78,7 +80,22 @@ function I() {
 return $I;
 }
 
+//!
+function screamer() {
+    global $screamer;
+    for($i = 10, $j=8; $i > 0; $i--) {
+     if($i==2){
+        $screamer .= " </br>";
+     }
+     else {
+       $screamer.= str_repeat('&nbsp;', $j). "* <br/>";
+     }
+}
+return $screamer;
+}
 
+
+//M
 function M() {
     global $M;
     for($i = 10, $j=0; $i > 0; $i--, $j++) {
@@ -182,9 +199,14 @@ return $Y;
 	<script type="text/javascript" src="js/script.js"></script>-->
 
         <style>
+            body {
+                background-color: #C8FFD4;
+            }
             div{
                width:10%;
                float:left;
+               color:red;
+               
             }
             section:after{
                 display: block;
@@ -193,27 +215,51 @@ return $Y;
             }
             section {
                 margin-bottom: 20px;
-            }
+              }
+         
+              .first, .fourth{
+                animation: color-change 10s infinite;
+              }
+              .second, .fifth {
+                animation: color-change 10s 3.333333s  infinite;
+              }
+              .third {
+                animation: color-change 10s 6.6666666s  infinite;
+              }
+
+        @keyframes color-change {
+            10% { color: blue; }
+            30% { color: yellow; }
+            50% { color: red; }
+            70% { color: blue;}
+            90% {color: yellow;}
+        }
+                    
         </style>
 </head>
 <body>
         <?php 
         echo "<section>";
         for($i=0; $i<count($merry); $i++) {
-            echo "<div>{$merry[$i]}</div>";
+            echo "<div class='first'>{$merry[$i]}</div>";
         }
         echo "</section>";
         
         echo "<section>";
         for($i=0; $i<count($christmas); $i++) {
-            echo "<div>{$christmas[$i]}</div>";
+            echo "<div class='second'>{$christmas[$i]}</div>";
         }
         echo "</section>";
         
         echo "<section>";
         for($i=0; $i<3; $i++) {
-            echo "<div>{$ho[0]}</div><div>{$ho[1]}</div>";
+            echo "<div class='third'>{$ho[0]}</div><div class='fourth'>{$ho[1]}</div>";
         }
+            for($i=0; $i<3; $i++) {
+            echo "<div class='fifth'>$screamer</div>";
+        }
+        
+        
         echo "</section>";
         
         ?>
