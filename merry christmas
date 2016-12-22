@@ -5,6 +5,7 @@ M(); E(); R(); Y(); C(); H(); I(); S(); T(); A();
 
 $merry = [$M, $E, $R, $R, $Y];
 $christmas = [$C, $H, $R, $I, $S, $T, $M, $A, $S, $S];
+$ho = [$H, $O];
 
 
 //A
@@ -202,6 +203,12 @@ return $Y;
         echo "<section>";
         for($i=0; $i<count($christmas); $i++) {
             echo "<div>{$christmas[$i]}</div>";
+        }
+        echo "</section>";
+        
+        echo "<section>";
+        for($i=0; $i<6; $i++) {
+            echo "<div>{$ho[0]}</div><div>{$ho[1]}</div>";
         }
         echo "</section>";
         

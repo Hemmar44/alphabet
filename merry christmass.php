@@ -1,10 +1,12 @@
 <?php
 $A='';$C='';$E='';$M=''; $O=''; $R=''; $S=''; $T=''; $Y='';
         
-M(); E(); R(); Y(); C(); H(); I(); S(); T(); A();
+M(); E(); R(); Y(); C(); H(); I(); S(); T(); A(); O();
 
 $merry = [$M, $E, $R, $R, $Y];
 $christmas = [$C, $H, $R, $I, $S, $T, $M, $A, $S, $S];
+$ho = [$H, $O];
+
 
 
 //A
@@ -96,7 +98,7 @@ function O() {
         $O.=  "*" .str_repeat('&nbsp;', $j+$j)."*<br/>";
     }
 }
-return $O;;
+return $O;
 }
 
 //R
@@ -171,7 +173,7 @@ return $Y;
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
 	
-    <title>My alphabet</title>
+    <title>Merry Cristmass</title>
 	
 	<!--<link href="https://fonts.googleapis.com/css?family=Open+Sans:400,700&amp;subset=latin-ext" rel="stylesheet">
 	<link rel="stylesheet" href="css/fontello/css/fontello.css"/>
@@ -189,6 +191,9 @@ return $Y;
                 clear:both;
                 content: '';
             }
+            section {
+                margin-bottom: 20px;
+            }
         </style>
 </head>
 <body>
@@ -202,6 +207,12 @@ return $Y;
         echo "<section>";
         for($i=0; $i<count($christmas); $i++) {
             echo "<div>{$christmas[$i]}</div>";
+        }
+        echo "</section>";
+        
+        echo "<section>";
+        for($i=0; $i<3; $i++) {
+            echo "<div>{$ho[0]}</div><div>{$ho[1]}</div>";
         }
         echo "</section>";
         
